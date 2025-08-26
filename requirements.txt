@@ -1,0 +1,8 @@
+e2b-code-interpreter
+pandas
+numpy
+matplotlib
+streamlit
+e2b
+Pillow
+python-dotenv
