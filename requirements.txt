@@ -1,4 +1,4 @@
-e2b-code-interpreter
+e2b-code-interpreter==1.0.3
 pandas
 numpy
 matplotlib
