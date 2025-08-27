@@ -35,8 +35,7 @@ def main_app_ui():
 
         model_options = {
             "llama-3.3-70b-versatile": "llama-3.3-70b-versatile",
-            "llama-3.1-8b-instant": "llama-3.1-8b-instant",
-            "mixtral-8x7b-32768": "mixtral-8x7b-32768"
+            "llama-3.1-8b-instant": "llama-3.1-8b-instant"
         }
 
         ui.session_state.model_name = ui.selectbox(
