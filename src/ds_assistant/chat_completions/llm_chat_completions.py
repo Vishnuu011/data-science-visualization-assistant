@@ -13,7 +13,6 @@ def generate_natural_language_explanation(code_results: Optional[List[Any]], exe
   
     
     try:
-        # Prepare context for the explanation
         explanation_context = f"""
         The user asked: "{original_query}"
         
@@ -36,7 +35,7 @@ def generate_natural_language_explanation(code_results: Optional[List[Any]], exe
                 {"role": "system", "content": "You are a helpful data science assistant that explains code execution results in clear, natural language."},
                 {"role": "user", "content": explanation_context}
             ],
-            temperature=0.3,  # Lower temperature for more factual responses
+            temperature=0.3, 
             max_completion_tokens=500,
             top_p=0.9,
             stream=False
@@ -68,6 +67,7 @@ def chat_with_large_language_model(e2b_code_interpreter: Sandbox, user_message: 
         """
 
         messages = [
+            
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_message},
         ]
@@ -95,7 +95,7 @@ def chat_with_large_language_model(e2b_code_interpreter: Sandbox, user_message: 
                     python_code
                 )
                 
-                # Generate natural language explanation
+                
                 explanation = generate_natural_language_explanation(
                     code_interpreter_results, 
                     execution_info, 
@@ -107,6 +107,7 @@ def chat_with_large_language_model(e2b_code_interpreter: Sandbox, user_message: 
             
             else:
                 ui.warning("Failed to match any Python code in model's response")
+
                 return None, response_message, "No code was executed.", {"success": False}
 
     except Exception as e:

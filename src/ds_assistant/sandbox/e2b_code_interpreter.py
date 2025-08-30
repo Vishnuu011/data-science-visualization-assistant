@@ -26,15 +26,14 @@ def e2b_sandbox_code_interpret(e2b_code_interpreter: Sandbox, code: str) -> Tupl
     
     try:
         with ui.spinner('Executing code in E2B sandbox...'):
-            # Run the code directly in the sandbox
+          
             execution = e2b_code_interpreter.run_code(code)
             
-            # Capture stdout output
+          
             stdout_output = ""
             if execution.logs.stdout:
                 stdout_output = execution.logs.stdout
-            
-            # Capture stderr output
+           
             stderr_output = ""
             if execution.logs.stderr:
                 stderr_output = execution.logs.stderr
