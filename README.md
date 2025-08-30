@@ -40,9 +40,10 @@ pip install data-science-visualization-assistant
 # run
 
 ```bash
-python run.py
+execute_app
 
 or
 
-execute_app
+python run.py
+
 ```
